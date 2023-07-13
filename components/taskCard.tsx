@@ -5,7 +5,7 @@ export const TaskCard = ({ title, description }) => {
   return (
     <div
       onClick={clickhandler}
-      className=" flex  flex-col  items-center justify-center border border-green-700"
+      className=" flex  flex-col  items-center justify-center border border-green-800"
     >
       <h1 className="text-2xl">{title}</h1>
       <p>{description}</p>
