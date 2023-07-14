@@ -2,6 +2,9 @@ export const TaskCard = ({ title, description }) => {
   const clickhandler = () => {
     alert("you click ");
   };
+  const buttonClickHandler = (e) => {
+    confirm('click in the button')
+  }
   return (
     <div
       onClick={clickhandler}
@@ -9,6 +12,7 @@ export const TaskCard = ({ title, description }) => {
     >
       <h1 className="text-2xl">{title}</h1>
       <p>{description}</p>
+      <button className=" bg-green-400 py-1 px-3 border-white border rounded " onClick={buttonClickHandler}>edit</button>
     </div>
   );
 };
