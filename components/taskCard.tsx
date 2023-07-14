@@ -4,6 +4,7 @@ export const TaskCard = ({ title, description }) => {
   };
   const buttonClickHandler = (e) => {
     confirm('click in the button')
+    e.stopPropagation()
   }
   return (
     <div
