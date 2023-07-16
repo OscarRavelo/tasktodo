@@ -1,6 +1,11 @@
 "use client"
+
+import { TaskForm } from "@/components/taskForm";
+
 const page = ({ params }) => {
-  return <div className="text-white ">edit {params.id}</div>
+  return (
+    <TaskForm id={params.id} />
+  )
 }
 
 export default page;

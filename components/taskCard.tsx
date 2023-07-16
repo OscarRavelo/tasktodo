@@ -1,10 +1,18 @@
 import { useRouter } from "next/navigation"
+import { useTasks } from "@/context/taskContext"
 export const TaskCard = ({ title, description, id }) => {
   const router = useRouter()
 
+
+  const { deleteTask } = useTasks()
+
   const buttonClickHandler = (e) => {
-    confirm('click in the button')
+
     e.stopPropagation()
+    if (confirm('click in the button') === true) {
+
+      deleteTask(id)
+    }
   }
   return (
     <div
@@ -13,7 +21,7 @@ export const TaskCard = ({ title, description, id }) => {
     >
       <h1 className="text-2xl">{title}</h1>
       <p>{description}</p>
-      <button className=" bg-green-400 py-1 px-3 border-white border rounded " onClick={buttonClickHandler}>edit</button>
+      <button className=" bg-green-400 py-1 px-3 border-white border rounded " onClick={buttonClickHandler}>delete</button>
     </div>
   );
 };
