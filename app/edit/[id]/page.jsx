@@ -1,5 +1,6 @@
 "use client"
 const page = ({ params }) => {
-  console.log(params)
-  return <div className="text-black">editing</div>
+  return <div className="text-white ">edit {params.id}</div>
 }
+
+export default page;

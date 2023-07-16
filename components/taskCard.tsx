@@ -1,14 +1,14 @@
-export const TaskCard = ({ title, description }) => {
-  const clickhandler = () => {
-    alert("you click ");
-  };
+import { useRouter } from "next/navigation"
+export const TaskCard = ({ title, description, id }) => {
+  const router = useRouter()
+
   const buttonClickHandler = (e) => {
     confirm('click in the button')
     e.stopPropagation()
   }
   return (
     <div
-      onClick={clickhandler}
+      onClick={() => router.push(`/edit/${id}`)}
       className=" flex  flex-col  items-center justify-center border border-green-800"
     >
       <h1 className="text-2xl">{title}</h1>

@@ -6,8 +6,8 @@ export default function Home() {
   const values = useContext(TasksContext);
   return (
     <div>
-      {values.map((item) => {
-        return <TaskCard title={item.title} description={item.description} key={item.id} />;
+      {values.tasks.map((item) => {
+        return <TaskCard title={item.title} description={item.description} key={item.id} id={item.id} />;
       })}
     </div>
   );
