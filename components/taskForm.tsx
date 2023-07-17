@@ -5,12 +5,17 @@ import { useTasks } from "@/context/taskContext"
 import { useRouter } from "next/navigation"
 export const TaskForm = ({ id }) => {
   const router = useRouter()
-  const { createTask, tasks } = useTasks()
+  const { createTask, tasks, editTask } = useTasks()
   const [task, setTask] = useState({ id: "", title: "", description: "" })
   const onSubmitHandler = (e) => {
     e.preventDefault()
-    createTask(task)
-    router.push('/')
+    if (id) {
+      editTask(task);
+      router.push('/');
+    } else {
+      createTask(task)
+      router.push('/')
+    }
   }
   useEffect(() => {
     if (id) {
@@ -19,7 +24,7 @@ export const TaskForm = ({ id }) => {
     }
   }, [id])
   const onChangeHandler = (e) => {
-    if (id) {
+    if (id !== "") {
       const task = tasks.find((task) => task.id === id)
       setTask(task)
     }
