@@ -9,7 +9,7 @@ export const TaskCard = ({ title, description, id }) => {
   const buttonClickHandler = (e) => {
 
     e.stopPropagation()
-    if (confirm('click in the button') === true) {
+    if (confirm('Are you sure you wanna delete the task?') === true) {
 
       deleteTask(id)
     }
